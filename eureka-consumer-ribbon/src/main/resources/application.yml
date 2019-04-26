@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: eureka-consumer-ribbon
+
+server:
+  port: 8301
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url.defaultZone: http://peer1:8101/eureka

@@ -12,6 +12,6 @@ public class HelloFallback implements HelloClient {
 
 	@Override
 	public String hello(@RequestParam("name")String name) {
-		return "error with calling hello?name=" + name;
+		return "error with calling /hello/h?name=" + name;
 	}
 }

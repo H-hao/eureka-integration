@@ -14,7 +14,7 @@ public class HelloController {
     @Value("${server.port}")
     String port;
 
-    @GetMapping("/")
+    @GetMapping("/h")
     public String hello(@RequestParam String name) {
         return "Hello, " + name + " " + new Date() + ", from " + port;
     }

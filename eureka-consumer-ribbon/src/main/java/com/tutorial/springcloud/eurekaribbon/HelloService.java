@@ -21,6 +21,8 @@ public class HelloService {
 		// Spring Cloud Ribbon 有一个拦截器，它能够在这里进行实际调用的时候，自动的去选取服务实例，
 		// 并将这里的服务名替换成实际要请求的 IP 地址和端口，从而完成服务接口的调用
 		String url = "http://eureka-producer/hello/?name=" + name;
+		// 调用失败的例子
+		// String url = "http://eureka-producer/hello/h?name=" + name;
 		return restTemplate.getForObject(url, String.class);
 	}
 

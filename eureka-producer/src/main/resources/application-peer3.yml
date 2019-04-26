@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: eureka-producer
+#  cloud:
+#    service-registry:
+#      auto-registration:
+#        enabled: false
+
+server:
+  port: 8203
+
+eureka:
+  client:
+    enabled: true
+    service-url.defaultZone: http://peer1:8101/eureka

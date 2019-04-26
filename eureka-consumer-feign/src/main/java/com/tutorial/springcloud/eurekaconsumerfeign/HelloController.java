@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
-	@Autowired
-	HelloClient helloClient;
+    @Autowired
+    HelloClient helloClient;
 
-	@GetMapping("/")
-	public String hello(@RequestParam String name) {
-		return helloClient.hello(name + "! by feign");
-	}
+    @GetMapping("/h")
+    public String hello(@RequestParam("name") String name) {
+        return helloClient.hello(name + "! by feign");
+    }
 }

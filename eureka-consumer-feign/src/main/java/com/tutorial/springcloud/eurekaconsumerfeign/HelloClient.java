@@ -2,7 +2,6 @@ package com.tutorial.springcloud.eurekaconsumerfeign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -18,7 +17,8 @@ public interface HelloClient {
 
 	// 尽量在 feignClient 中不要使用 requestMapping，可能会造成与 controller 中的 urlPattern 重复
 
-	@GetMapping("/hello/")
+	// @GetMapping("/hello/")
+	@GetMapping("/hello/h")
 	String hello(@RequestParam("name") String name);
 
 }

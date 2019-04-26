@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: eureka-consumer-loanbalancerclient
+
+server:
+  port: 8300
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url.defaultZone: http://peer1:8101/eureka

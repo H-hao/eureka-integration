@@ -1,0 +1,26 @@
+#集群时，在注册的时候，配置文件中的spring.application.name必须一致，否则他们只是两个单独的注册中心，他们之间无法进行 peer-to-peer 通信；
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8101
+
+# 当前 eureka 实例所在域名，本机测试需要修改host文件
+eureka:
+  instance:
+    hostname: peer1
+    # 如果不使用这个配置，则Eureka 实例信息中 host 属性值不正确，即管理界面中Status后的链接信息不正确（0.0.0.7）
+    # 如果进行服务的调用，则获取到的实例host错误（7 -> http://7:8200/hello/h）导致调用失败
+    prefer-ip-address: true
+
+# 在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为
+# 注意：如果配置 eureka-server 为集群，那么需要开启这两个配置为 true，
+# 因为他们需要向兄弟节点进行注册以实现集群环境，否则仅仅是两个单节点的注册中心；在页面上处于 unavailable-replicas 下；
+  client:
+    # 表示是否将自己注册到 Eureka Server
+    register-with-eureka: true
+    # 表示是否从 Eureka Server 获取注册信息
+    fetch-registry: true
+    # 设置与 Eureka Server 交互的地址，查询服务和注册服务都需要依赖这个地址
+    service-url.defaultZone: http://peer2:8102/eureka,http://peer3:8103/eureka

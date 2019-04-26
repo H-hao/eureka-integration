@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: eureka-producer
+#  cloud:
+#    service-registry:
+#      auto-registration:
+#        enabled: false
+
+server:
+  port: 8200
+
+# 如果 classpath 包含了 spring-cloud-starter-netflix-eureka-client 依赖
+# 则此应用会包含一个 Eureka 实例，并且此实例为一个 Eureka Client（其会查询其他服务的注册信息）
+
+# 目前来说，下面两种方式都会导致：此应用是一个非 eureka-client 应用，即：其不会向 eureka-server 中心注册服务信息；
+# To disable the Eureka Discovery Client, you can set eureka.client.enabled to false
+# 下面这种方式，会取消默认 自动注册 的行为；
+#spring.cloud.service-registry.auto-registration.enabled=false
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+#    enabled: false
+    service-url.defaultZone: http://peer1:8101/eureka

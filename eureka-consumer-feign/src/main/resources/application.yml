@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: eureka-consumer-feign
+
+server:
+  port: 8302
+
+# actuator 2.x 之后 endpoints 都在 /actuator 之下
+# springboot 2.0.2 之后默认base-path为/actuator，即：management.endpoints.web.base-path=/actuator
+# 暴露 监控相关 的接口，* 代表 all；
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://peer1:8101/eureka
+
+# Spring Cloud Dalston release 之前，默认为 true，Spring Cloud Dalston release 开始默认为 false
+# 理解：因为 feign 自带了 hystrix，将其配置化，所以不需要@enableHystrix但是需要配置 feign.hystrix.enable=true
+feign:
+  hystrix:
+    enabled: true
+# 其他：Feign正确的使用姿势和性能优化注意事项（https://www.jianshu.com/p/191d45210d16）
