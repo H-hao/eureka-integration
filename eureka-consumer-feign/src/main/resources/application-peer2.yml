@@ -8,7 +8,7 @@ spring:
       password: guest
 
 server:
-  port: 8302
+  port: 8303
 
 # actuator 2.x 之后 endpoints 都在 /actuator 之下
 # springboot 2.0.2 之后默认base-path为/actuator，即：management.endpoints.web.base-path=/actuator

@@ -21,4 +21,5 @@ eureka:
     # 表示是否从 Eureka Server 获取注册信息
     fetch-registry: true
     # 设置与 Eureka Server 交互的地址，查询服务和注册服务都需要依赖这个地址
-    service-url.defaultZone: http://peer1:8101/eureka,http://peer3:8103/eureka
+    service-url:
+      defaultZone: http://peer1:8101/eureka,http://peer3:8103/eureka
