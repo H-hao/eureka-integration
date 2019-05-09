@@ -23,3 +23,8 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### jRebel ###
+jrebel-*.jar
+rebel.xml
+.rebel.xml.bak
