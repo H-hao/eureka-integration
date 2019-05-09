@@ -12,4 +12,5 @@ server:
 eureka:
   client:
 #    enabled: false
-    service-url.defaultZone: http://peer1:8101/eureka
+    service-url:
+      defaultZone: http://peer1:8101/eureka
