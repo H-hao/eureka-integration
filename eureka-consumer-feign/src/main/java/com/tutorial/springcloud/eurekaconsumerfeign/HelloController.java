@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @Autowired
     HelloClient helloClient;
-    @Value("${config.hello}")
+    @Value("${config.hello:not found}")
     String hello;
 
     @GetMapping("/h")
