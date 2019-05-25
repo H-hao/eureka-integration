@@ -1,0 +1,9 @@
+server:
+    port: 8600
+spring:
+    application:
+        name: api-gateway-zuul
+eureka:
+    client:
+        service-url:
+            defaultZone: http://peer1:8101/eureka
