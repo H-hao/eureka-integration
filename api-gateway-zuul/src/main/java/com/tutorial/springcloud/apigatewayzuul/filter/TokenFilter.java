@@ -36,7 +36,8 @@ public class TokenFilter extends ZuulFilter {
             ctx.setResponseStatusCode(401);
             ctx.setResponseBody("Token is empty!!!!!");
         } else {
-            // ctx.addOriginResponseHeader("token", token);
+            // ctx.addOriginResponseHeader("token1", "aa");
+            // 设置到响应，并返回前台
             ctx.addZuulResponseHeader("token", token);
         }
 
