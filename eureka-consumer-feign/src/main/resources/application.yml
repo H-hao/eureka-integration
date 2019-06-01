@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: eureka-consumer-feign
   cloud:
     bus:
       enabled: true
@@ -11,6 +9,17 @@ spring:
       port: 8080
       username: guest
       password: guest
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+  zipkin:
+    enabled: true
+    sender:
+      type: web
+    base-url: http://localhost:9411/ # 指定了 Zipkin 服务器的地址
 
 server:
   port: 8302
@@ -37,3 +46,5 @@ feign:
   hystrix:
     enabled: true
 # 其他：Feign正确的使用姿势和性能优化注意事项（https://www.jianshu.com/p/191d45210d16）
+
+debug: true

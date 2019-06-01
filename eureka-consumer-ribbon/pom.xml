@@ -48,6 +48,24 @@
 			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+		<!--spring-cloud-starter-stream-rabbit已包含-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.amqp</groupId>-->
+			<!--<artifactId>spring-rabbit</artifactId>-->
+		<!--</dependency>-->
+
 	</dependencies>
 
 	<dependencyManagement>

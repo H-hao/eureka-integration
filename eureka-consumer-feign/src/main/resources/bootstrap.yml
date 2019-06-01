@@ -8,6 +8,8 @@
 
 # config server 服务化之后的配置
 spring:
+  application:
+    name: eureka-consumer-feign
   cloud:
     config:
       name: config-client

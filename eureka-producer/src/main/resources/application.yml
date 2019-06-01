@@ -1,11 +1,25 @@
 spring:
-  application:
-    name: eureka-producer
 #  cloud:
 #    service-registry:
 #      auto-registration:
 #        enabled: false
-
+  rabbitmq:
+    host: localhost
+    port: 8080
+    username: guest
+    password: guest
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+  zipkin:
+    enabled: true
+#    web 的方式，如果使用 rabbitmq，则需要更改为 rabbit或直接注释
+    sender:
+      type: web
+    base-url: http://localhost:9411/ # 指定了 Zipkin 服务器的地址
 server:
   port: 8200
 
