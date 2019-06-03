@@ -7,6 +7,8 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+      default-filters:
+        - Elapsed=false
       routes:
         - id: feign
           uri: lb://EUREKA-CONSUMER-FEIGN
@@ -16,6 +18,7 @@ spring:
           filters:
             - StripPrefix=1
             - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+            - Elapsed=true
 
 server:
   port: 8601
