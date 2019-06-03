@@ -6,7 +6,10 @@
 	<groupId>com.tutorial.springcloud</groupId>
 	<artifactId>eureka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    <modules>
+        <module>api-gateway-gateway</module>
+    </modules>
+    <packaging>pom</packaging>
 
 	<name>eureka-integration</name>
 	<description>Demo project for Spring Boot</description>

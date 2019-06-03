@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: api-gateway-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: feign
+          uri: lb://EUREKA-CONSUMER-FEIGN
+          order: 0
+          predicates:
+            - Path=/a/** # 可用于缩短 url
+          filters:
+            - StripPrefix=1
+            - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+
+server:
+  port: 8601
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8101/eureka
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
