@@ -18,7 +18,7 @@ spring:
           filters:
             - StripPrefix=1
             - AddResponseHeader=X-Response-Default-Foo, Default-Bar
-            - Elapsed=true
+#            - Elapsed=true # 作用于 ElapsedGatewayFilterFactory
 
 server:
   port: 8601

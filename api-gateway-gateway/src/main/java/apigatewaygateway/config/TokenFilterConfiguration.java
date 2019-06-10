@@ -1,6 +1,5 @@
 package apigatewaygateway.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -10,7 +9,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class TokenFilterConfiguration {
-    @Bean
+
+    // @Bean
     public TokenFilter tokenFilter(){
         return new TokenFilter();
     }
