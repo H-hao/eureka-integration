@@ -37,6 +37,12 @@ eureka:
     service-url:
       defaultZone: http://peer1:8101/eureka
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
 logging:
   level:
     org.springframework.cloud.gateway: debug
