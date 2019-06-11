@@ -23,6 +23,10 @@ spring:
                 key-resolver: '#{@remoteAddrKeyResolver}' # 用于限流的键的解析器的 Bean 对象名字，从 spring 容器中获取指定名称的bean，
                 redis-rate-limiter.burstCapacity: 5 # 令牌桶容量
                 redis-rate-limiter.replenishRate: 1 # 令牌桶每秒填充平均速率
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackuri: forward:/fallback
             - AddResponseHeader=X-Response-Default-Foo, Default-Bar
   redis:
     host: localhost
