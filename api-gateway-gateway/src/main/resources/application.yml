@@ -8,7 +8,7 @@ spring:
           enabled: true
           lower-case-service-id: true
       default-filters:
-        - Elapsed=false
+        - Elapsed=true
       routes:
         - id: feign
           uri: lb://EUREKA-CONSUMER-FEIGN
@@ -17,8 +17,17 @@ spring:
             - Path=/a/** # 可用于缩短 url
           filters:
             - StripPrefix=1
-            - AddResponseHeader=X-Response-Default-Foo, Default-Bar
 #            - Elapsed=true # 作用于 ElapsedGatewayFilterFactory
+            - name: RequestRateLimiter
+              args:
+                key-resolver: '#{@remoteAddrKeyResolver}' # 用于限流的键的解析器的 Bean 对象名字，从 spring 容器中获取指定名称的bean，
+                redis-rate-limiter.burstCapacity: 5 # 令牌桶容量
+                redis-rate-limiter.replenishRate: 1 # 令牌桶每秒填充平均速率
+            - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
 
 server:
   port: 8601
