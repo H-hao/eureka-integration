@@ -13,7 +13,7 @@ public class FallbackController {
 
     @GetMapping("/fallback")
     public String fallback() {
-        return "Hello World!\nfrom gateway";
+        return "Fallback!\nfrom gateway";
     }
 
 }
