@@ -23,6 +23,7 @@ spring:
                 key-resolver: '#{@remoteAddrKeyResolver}' # 用于限流的键的解析器的 Bean 对象名字，从 spring 容器中获取指定名称的bean，
                 redis-rate-limiter.burstCapacity: 5 # 令牌桶容量
                 redis-rate-limiter.replenishRate: 1 # 令牌桶每秒填充平均速率
+#            - RemoveRequestHeader=Origin
             - name: Retry # 路由重试
               args:
                 retries: 3
@@ -45,7 +46,7 @@ spring:
 server:
   port: 8601
 
-#hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 5000
+hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 5000
 
 eureka:
   client:
