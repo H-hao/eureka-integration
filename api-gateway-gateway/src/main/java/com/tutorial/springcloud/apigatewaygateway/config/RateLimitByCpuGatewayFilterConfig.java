@@ -1,4 +1,4 @@
-package apigatewaygateway.config;
+package com.tutorial.springcloud.apigatewaygateway.config;
 
 import org.springframework.boot.actuate.metrics.MetricsEndpoint;
 import org.springframework.cloud.gateway.route.RouteLocator;

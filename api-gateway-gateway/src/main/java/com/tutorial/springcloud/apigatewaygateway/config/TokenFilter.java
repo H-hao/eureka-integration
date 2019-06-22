@@ -1,4 +1,4 @@
-package apigatewaygateway.config;
+package com.tutorial.springcloud.apigatewaygateway.config;
 
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;

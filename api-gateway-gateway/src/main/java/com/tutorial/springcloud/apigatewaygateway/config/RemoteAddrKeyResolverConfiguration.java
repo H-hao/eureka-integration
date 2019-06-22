@@ -1,4 +1,4 @@
-package apigatewaygateway.config;
+package com.tutorial.springcloud.apigatewaygateway.config;
 
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.context.annotation.Bean;

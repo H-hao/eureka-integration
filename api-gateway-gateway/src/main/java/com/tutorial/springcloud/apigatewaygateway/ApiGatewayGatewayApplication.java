@@ -1,4 +1,4 @@
-package apigatewaygateway;
+package com.tutorial.springcloud.apigatewaygateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

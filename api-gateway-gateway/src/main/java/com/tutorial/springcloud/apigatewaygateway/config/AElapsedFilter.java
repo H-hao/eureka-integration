@@ -1,4 +1,4 @@
-package apigatewaygateway.config;
+package com.tutorial.springcloud.apigatewaygateway.config;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

@@ -1,4 +1,4 @@
-package apigatewaygateway.config;
+package com.tutorial.springcloud.apigatewaygateway.config;
 
 import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.boot.actuate.metrics.MetricsEndpoint;
