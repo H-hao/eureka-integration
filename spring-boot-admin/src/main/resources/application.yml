@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: admin-server
+
+server:
+    port: 8800
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8101/eureka
